@@ -3,51 +3,62 @@
 
 <head>
   <title>
-    rock_paper_scissors
+    roc paper scissors
   </title>
   <style>
+    
+    .buttonGroupe {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+    }
+    button {
+      padding: 16px 8px;
+      font-size: 32px;
+      background-color: none;
+      border: yellow solid;
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.5s;
+      width: 100px;
+    }
   </style>
 </head>
 
-<body>
-  <button onclick="
-    computerMove = pickComputerMove();
-    getResult(computerMove, 'rock');
+<body background-color: #232323;>
+  <div class="buttonGrupe"></div>
+    <button  style="width:10%" onclick="
+      computerMove = pickComputerMove();
+      getResult(computerMove, 'rock');
+      ">
+      ✊
+    </button>
+    <button  style="width:10%" onclick="
+      computerMove = pickComputerMove();
+      getResult(computerMove, 'paper');
     ">
-    ✊
-  </button>
-  <button onclick="
-    computerMove = pickComputerMove();
-    getResult(computerMove, 'paper');
-  ">
-    🖐️
-  </button>
-  <button onclick="
-    computerMove = pickComputerMove();
-    getResult(computerMove, 'scissors');
-  ">
-    ✌️
-  </button>
-  <button onclick="
-  score = {
-    wins: 0,
-    loses: 0,
-    drows: 0
-  }
-  localStorage.removeItem('score')
-  ">
-    reset
-  </button>
-  <script>
-    let score = JSON.parse(localStorage.getItem('score'))
-
-    if (score === null) {
-      score = {
-        wins: 0,
-        loses: 0,
-        drows: 0
-      }
+      🖐️
+    </button>
+    <button  style="width:10%" onclick="
+      computerMove = pickComputerMove();
+      getResult(computerMove, 'scissors');
+    ">
+      ✌️
+    </button>
+    <button  style="width:10%" onclick="
+    score = {
+      wins: 0,
+      loses: 0,
+      drows: 0
     }
+    localStorage.removeItem('score')
+    ">
+      RESET
+    </button>
+  </div>
+</body>
+  <script>
+    let score = JSON.parse(localStorage.getItem('score')) || {wins: 0, loses: 0, drows: 0 }
 
     function getResult(computerMove, yourMove) {
       if (yourMove === 'rock') {
