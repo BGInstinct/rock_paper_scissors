@@ -6,26 +6,45 @@
     Rock Paper Scissors
   </title>
   <style>
+    body {
+      font-family: Arial;
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+    .title {
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+      color: #f1f1f1;
+      margin-bottom: 20px;
+    }
+    .paragraph-button {
+      text-align: center;
+    }
+    .move-buttons {
+      font-size: 50px;
+      padding: ;
+    }
   </style>
 </head>
 
 <body>
-  <p> Rock Paper Scissors </p>
-  <p>
-    <button style="width:10%" onclick="buttonRockPaperScissors('rock')">
+  <p class="title"> Rock Paper Scissors </p>
+  <p class="paragraph-button">
+    <button class="move-buttons" onclick="buttonRockPaperScissors('rock')">
       ✊
     </button>
-    <button style="width:10%" onclick="buttonRockPaperScissors('paper')">
+    <button class="move-buttons" onclick="buttonRockPaperScissors('paper')">
       🖐️
     </button>
-    <button style="width:10%" onclick="buttonRockPaperScissors('scissors')">
+    <button class="move-buttons" onclick="buttonRockPaperScissors('scissors')">
       ✌️
     </button>
   </p>
   <p class="js-result"></p>
   <p class="js-moves"></p>
   <p class="js-score"></p>
-  <button style="width:10%" onclick="reset()">
+  <button onclick="reset()">
     RESET
   </button>
   
