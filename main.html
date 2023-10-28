@@ -24,9 +24,27 @@
     .move-buttons {
       font-size: 50px;
       padding: 10px;
+      min-width: 150px;
       background-color: #121212;
       border-radius: 50px;
       border-width: 5px;
+      margin: 0px 10px;
+      cursor: pointer;
+    }
+    p {
+      text-align: center;
+      font-size: 20px;
+    }
+    .reset {
+      text-align: center;
+      font-size: 15px;
+      font-weight: bold;
+      color: #f1f1f1;
+      min-width: 250px;
+      padding: 10px;
+      border-width: 5px;
+      border-radius: 50px;
+      background-color: #121212;
     }
   </style>
 </head>
@@ -47,9 +65,11 @@
   <p class="js-result"></p>
   <p class="js-moves"></p>
   <p class="js-score"></p>
-  <button onclick="reset()">
-    RESET
-  </button>
+  <p>
+    <button class="reset" onclick="reset()">
+      RESET
+    </button>
+  </p>
   
 </body>
 <script>
@@ -58,44 +78,44 @@
   function getResult(computerMove, yourMove) {
     if (yourMove === 'rock') {
       if (computerMove === 'rock') {
-        result = 'drow'
+        result = 'Drow'
       }
       else if (computerMove === 'paper') {
-        result = 'lost'
+        result = 'Lost'
       }
       else {
-        result = 'won'
+        result = 'Won'
       }
     }
 
     if (yourMove === 'paper') {
       if (computerMove === 'rock') {
-        result = 'won'
+        result = 'Won'
       }
       else if (computerMove === 'paper') {
-        result = 'drow'
+        result = 'Drow'
       }
       else {
-        result = 'lost'
+        result = 'Lost'
       }
     }
 
     if (yourMove === 'scissors') {
       if (computerMove === 'rock') {
-        result = 'lost'
+        result = 'Lost'
       }
       else if (computerMove === 'paper') {
-        result = 'won'
+        result = 'Won'
       }
       else {
-        result = 'drow'
+        result = 'Drow'
       }
     }
 
-    if (result === 'won') {
+    if (result === 'Won') {
       score.wins += 1
     }
-    else if (result === 'lost') {
+    else if (result === 'Lost') {
       score.loses += 1
     }
     else {
@@ -103,7 +123,7 @@
     }
 
     localStorage.setItem('score', JSON.stringify(score));
-
+    console.log(score);
     return result
 
 
@@ -130,11 +150,18 @@
   }
 
   function updateScore() {
+
     document.querySelector('.js-score')
       .innerHTML = `Wins: ${score.wins}, Loses: ${score.loses}, Drows: ${score.drows}`;
   }
 
   function updateMoves(computerMove, yourMove) {
+    if (computerMove == 'rock') {computerMove = '✊';}
+    if (computerMove == 'paper') {computerMove = '🖐️';}
+    if (computerMove =='scissors') {computerMove = '✌️';}
+    if (yourMove == 'rock') {yourMove = '✊';}
+    if (yourMove == 'paper') {yourMove = '🖐️';}
+    if (yourMove =='scissors') {yourMove = '✌️';}
     document.querySelector('.js-moves').innerHTML = `You pickt: ${yourMove} VS Computer pickt: ${computerMove}`;
   }
 
