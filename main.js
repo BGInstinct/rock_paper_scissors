@@ -105,3 +105,29 @@ function reset () {
   document.querySelector('.js-moves').innerHTML = null;
   updateScore();
 }
+
+let isAutoPlaying = false;
+let intervalId;
+
+function autoplay() {
+  if (!isAutoPlaying) {
+    intervalId = setInterval(function() {
+      const player = pickComputerMove();
+      buttonRockPaperScissors(player);
+    }, 1000);
+    isAutoPlaying = true;
+  } else {
+    clearInterval(intervalId);
+    isAutoPlaying = false;
+  }
+}
+
+document.querySelector('.js-rock-button').addEventListener('click', () => {buttonRockPaperScissors('rock')});
+
+document.querySelector('.js-paper-button').addEventListener('click', () => {buttonRockPaperScissors('paper')});
+
+document.querySelector('.js-scissors-button').addEventListener('click', () => {buttonRockPaperScissors('scissors')});
+
+document.querySelector('.js-reset-button').addEventListener('click', reset);
+
+document.querySelector('.js-auto-play-button').addEventListener('click', autoplay);

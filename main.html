@@ -11,13 +11,13 @@
 <body>
   <p class="title"> Rock Paper Scissors </p>
   <p class="paragraph-button">
-    <button class="move-buttons" onclick="buttonRockPaperScissors('rock')">
+    <button class="move-buttons js-rock-button">
       ✊
     </button>
-    <button class="move-buttons" onclick="buttonRockPaperScissors('paper')">
+    <button class="move-buttons js-paper-button">
       🖐️
     </button>
-    <button class="move-buttons" onclick="buttonRockPaperScissors('scissors')">
+    <button class="move-buttons js-scissors-button">
       ✌️
     </button>
   </p>
@@ -25,8 +25,11 @@
   <p class="js-moves"></p>
   <p class="js-score"></p>
   <p>
-    <button class="reset" onclick="reset()">
+    <button class="reset js-reset-button">
       RESET
+    </button>
+    <button class="auto-play js-auto-play-button">
+      AUTO PLAY
     </button>
   </p>
   
