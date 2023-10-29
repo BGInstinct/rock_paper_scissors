@@ -1,2 +1,2 @@
 # rock_paper_scissors
-a website i am werking
+A rock paper scissors website game
