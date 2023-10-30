@@ -6,7 +6,7 @@ body {
 
 .title {
   text-align: center;
-  font-size: 230%;
+  font-size: 2cm;
   font-weight: bold;
   color: #f1f1f1;
   margin-bottom: 1%;
@@ -17,12 +17,12 @@ body {
 }
 
 .move-buttons {
-  font-size: 230%;
+  font-size: 3cm;
   padding: 1%;
-  min-width: 15%;
+  min-width: 7.5cm;
   background-color: #121212;
-  border-radius: 50px;
-  border-width: 5px;
+  border-radius: 7cm;
+  border-width: 10px;
   margin: 0px 5px;
   cursor: pointer;
 }
@@ -30,17 +30,17 @@ body {
 div {
   text-align: center;
   padding: 10px 10px;
-  font-size: 130%;
+  font-size: 1.3cm;
 }
 
 .reset, .auto-play {
   text-align: center;
-  font-size: 75%;
+  font-size: 1.1cm;
   font-weight: bold;
   color: #f1f1f1;
-  min-width: 19%;
+  min-width: 12cm;
   padding: 10px;
-  border-width: 5px;
+  border-width: 7px;
   border-radius: 50px;
   margin: 0px 5px;
   background-color: #121212;
