@@ -27,8 +27,9 @@ body {
   cursor: pointer;
 }
 
-p {
+div {
   text-align: center;
+  padding: 10px 10px;
   font-size: 130%;
 }
 
