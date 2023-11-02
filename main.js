@@ -1,9 +1,9 @@
-let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, loses: 0, drows: 0 }
+let score = JSON.parse(localStorage.getItem('score')) || { wins: 0, loses: 0, draws: 0 }
 
 function getResult(computerMove, yourMove) {
   if (yourMove === 'rock') {
     if (computerMove === 'rock') {
-      result = 'Drow'
+      result = 'Draw'
     }
     else if (computerMove === 'paper') {
       result = 'Lost'
@@ -18,7 +18,7 @@ function getResult(computerMove, yourMove) {
       result = 'Won'
     }
     else if (computerMove === 'paper') {
-      result = 'Drow'
+      result = 'Draw'
     }
     else {
       result = 'Lost'
@@ -33,7 +33,7 @@ function getResult(computerMove, yourMove) {
       result = 'Won'
     }
     else {
-      result = 'Drow'
+      result = 'Draw'
     }
   }
 
@@ -77,7 +77,7 @@ function updateResult(result) {
 function updateScore() {
 
   document.querySelector('.js-score')
-    .innerHTML = `Wins: ${score.wins}, Loses: ${score.loses}, Drows: ${score.drows}`;
+    .innerHTML = `Wins: ${score.wins}, Loses: ${score.loses}, Draws: ${score.drows}`;
 }
 
 function updateMoves(computerMove, yourMove) {
@@ -99,7 +99,7 @@ function buttonRockPaperScissors(yourMove) {
 }
 
 function reset () {
-  score = {wins: 0, loses: 0, drows: 0};
+  score = {wins: 0, loses: 0, draws: 0};
   localStorage.removeItem('score'); 
   document.querySelector(".js-result").innerHTML = null;
   document.querySelector('.js-moves').innerHTML = null;
