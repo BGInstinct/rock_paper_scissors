@@ -44,7 +44,7 @@ function getResult(computerMove, yourMove) {
     score.loses += 1
   }
   else {
-    score.drows += 1
+    score.draws += 1
   }
 
   localStorage.setItem('score', JSON.stringify(score));
@@ -77,7 +77,7 @@ function updateResult(result) {
 function updateScore() {
 
   document.querySelector('.js-score')
-    .innerHTML = `Wins: ${score.wins}, Loses: ${score.loses}, Draws: ${score.drows}`;
+    .innerHTML = `Wins: ${score.wins}, Loses: ${score.loses}, Draws: ${score.draws}`;
 }
 
 function updateMoves(computerMove, yourMove) {
